@@ -1,0 +1,17 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: eureka-ribbon-consumer
+eureka:
+  client:
+    registerWithEureka: true 
+    fetchRegistry: true
+    preferSameZoneEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka
+  server:
+    enable-self-preservation: false
+ribbon:
+  eureka:
+    enabled: true
