@@ -1,5 +1,6 @@
 server:
   port: 9000
+
 spring:
   application:
     name: eureka-ribbon-consumer
@@ -9,7 +10,7 @@ eureka:
     fetchRegistry: true
     preferSameZoneEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8080/eureka
+      defaultZone: http://localhost:8761/eureka,http://localhost:8762/eureka
   server:
     enable-self-preservation: false
 ribbon:

@@ -1,8 +1,5 @@
 package com.example.demo;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +25,7 @@ public class ConsumerController {
 	
 	@RequestMapping(value="/ribbon-consumer",method = RequestMethod.GET)
 	public String helloConsumerString() {
-		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://EUREKA-DISCOVERYCLIENT/hello?name={1}", String.class,"didi");
+		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://HELLO-SERVICE/hello?name={1}", String.class,"didi");
 		String body = responseEntity.getBody();
 		return body;
 	}
