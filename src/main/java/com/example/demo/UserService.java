@@ -12,12 +12,14 @@ public class UserService {
 	@Autowired
 	RestTemplate restTemplate;
 	
+	static String errorMsg = "error";
+	
 	@HystrixCommand(fallbackMethod = "helloFallback")
 	public String helloService() {
 		return restTemplate.getForEntity("http://EUREKA-DISCOVERYCLIENT/hello", String.class).getBody();
 	}
 	
 	public String helloFallback() {
-		return "error";
+		return errorMsg;
 	}
 }
